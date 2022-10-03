@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Analytics - Security Testing</title>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KLR8YT9YGZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KLR8YT9YGZ');
+</script>
+
+</head>
+<body>
+
+  <div id="root">
+    <button id="triggerEvent">Google - Trigger Event</button>
+  </div>
+  
+  <script>
+
+    gtag('event', 'page_view');
+
+    const eventBtn = document.getElementById("triggerEvent");
+    eventBtn.addEventListener("click", ()=>{
+      console.log("sending Event");
+      gtag('event', 'event_btn_click');
+    });
+
+  </script>
+</body>
+</html>
